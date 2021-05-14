@@ -21,9 +21,9 @@ I'll use HTML and CSS to lay out the grid and UI, and use JS to change the conte
 3. Player will use numpad or click buttons to move and attack.
 4. Enemies will move and attack.
 5. The UI will display current health and event messages.
-6. Stairs down will load next level. Reaching the end of the last level wins the game.
 
 ## Stretch Goals
+- Stairs down will load next level. Reaching the end of the last level wins the game.
 - player line of sight
 - draw tiles and sprites
 - generate new levels each new game
