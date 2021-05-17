@@ -3,9 +3,38 @@
     <head>
         <title>Underworld Adventure</title>
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
         <script src="scripts/script.js"></script>
     </head>
     <body>
-        <h1>Hello, world!</h1>
+        <div class="game-container">
+            <div class="player-status-container">
+                <div class="player-name">Player Name goes here</div>
+                <div class="health-bar">Health: 💗💗💗💗💗💗</div>
+            </div>
+            <div class="event-log">
+                <p>>placeholder event</p>
+                <p>>placeholder event</p>
+                <p>>placeholder event</p>
+                <p>>placeholder event</p>
+                <p>>placeholder event</p>
+                <p>>placeholder event</p>
+            </div>
+            <div class="render-container"></div>
+            <div class="button-container">
+                <div class="movement-button-container">
+                    <button type="button" class="movement-button" id="up-left">↖</button>
+                    <button type="button" class="movement-button" id="up">⬆</button>
+                    <button type="button" class="movement-button" id="up-right">↗</button>
+                    <button type="button" class="movement-button" id="left">⬅</button>
+                    <button type="button" class="movement-button" id="wait">🛑</button>
+                    <button type="button" class="movement-button" id="right">➡</button>
+                    <button type="button" class="movement-button" id="down-left">↙</button>
+                    <button type="button" class="movement-button" id="down">⬇</button>
+                    <button type="button" class="movement-button" id="down-right">↘</button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

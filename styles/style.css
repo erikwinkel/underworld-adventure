@@ -1,3 +1,48 @@
-h1 {
-    color: red;
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    font-family: 'Inconsolata', monospace;
+}
+
+.game-container {
+    display: grid;
+    grid-template-areas: "player-status-container render-container"
+                        "event-log render-container"
+                        "button-container button-container"
+}
+
+.player-status-container {
+    grid-area: player-status-container;
+    border: 1px solid white;
+}
+
+.event-log {
+    grid-area: event-log;
+    border:1px solid white;
+}
+
+.render-container {
+    grid-area: render-container;
+    display: grid;
+    grid: repeat(20, 1fr) / repeat(80, 1fr);
+    border: 1px solid white;
+}
+
+
+.button-container {
+    grid-area: button-container;
+    display:flex;
+    justify-content: space-around;
+    border: 1px solid white;
+}
+
+.movement-button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.game-tile {
+    font-size: 22px;
+    line-height: 16px;
 }
