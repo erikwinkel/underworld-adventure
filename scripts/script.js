@@ -55,6 +55,8 @@ window.addEventListener("DOMContentLoaded", () => {
                     player.x = x
                     player.y = y
                     return player
+                } else if(tile === 4) {
+                    return new Goblin(x,y)
                 }
             })
         })
@@ -123,7 +125,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         //check if actor would collide with object in target x,y
         checkCollision(x,y) {
-            if(gameState.level[y][x]) {
+            if(gameState.level[y][x] && gameState.level[y][x] !== 2 && gameState.level[y][x] !== 3) {
                 return true
             } else if(gameState.entities[y][x]) {
                 return true
@@ -182,12 +184,23 @@ window.addEventListener("DOMContentLoaded", () => {
         //move actor to target coordinates
         move(x,y) {
             gameState.entities[y][x] = gameState.entities[this.y][this.x]
+            gameState.entities[this.y][this.x] = 0
             this.x = x
             this.y = y
         }
 
         bump(target) {
             return false
+        }
+
+        takeDamage(damage) {
+            this.hitPoints -= damage
+            if(this.hitPoints <= 0) {
+                this.die()
+            }
+        }
+        die() {
+            gameState.entities[this.y][this.x] = null
         }
     }
 
@@ -200,10 +213,28 @@ window.addEventListener("DOMContentLoaded", () => {
 
         bump(target) {
             if(target){
-                attack()
+                this.attack(target)
             } else{
                 console.log("Ouch, you bump into something!")
             }
+        }
+
+        attack(target) {
+            if(target instanceof Goblin) {
+                console.log("You attack the goblin for 1 damage.")
+                target.takeDamage(1)
+            }
+        }
+    }
+
+    class Goblin extends Actor {
+        constructor(x,y) {
+            super(x,y,Math.floor(Math.random()*5)+1)
+            this.renderValue = 6
+        }
+        die(){
+            gameState.entities[this.y][this.x] = null
+            console.log("the goblin dies")
         }
     }
 
@@ -219,8 +250,58 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const player = new Player(0,0,10)
     loadLevel(testLevel)
-    console.log(gameState)
     mergeView()
     render()
 
+    //add event listeners for clickable movement buttons
+    let movementButtons = document.getElementsByClassName("movement-button")
+    for(let i = 0; i < movementButtons.length; i++) {
+        movementButtons[i].addEventListener('click', () => {
+            if(movementButtons[i].value !== "wait") {
+                player.tryMove(movementButtons[i].value)
+            }
+            advanceTurn()
+        })
+    }
+    
+    //add keyboard event listeners
+    document.addEventListener('keydown', (event) => {
+        switch(event.code){
+            case "Numpad1":
+                player.tryMove("down-left")
+                advanceTurn()
+                break
+            case "Numpad2":
+                player.tryMove("down")
+                advanceTurn()
+                break
+            case "Numpad3":
+                player.tryMove("down-right")
+                advanceTurn()
+                break
+            case "Numpad4":
+                player.tryMove("left")
+                advanceTurn()
+                break
+            case "Numpad5":
+                advanceTurn()
+                break
+            case "Numpad6":
+                player.tryMove("right")
+                advanceTurn()
+                break
+            case "Numpad7":
+                player.tryMove("up-left")
+                advanceTurn()
+                break
+            case "Numpad8":
+                player.tryMove("up")
+                advanceTurn()
+                break
+            case "Numpad9":
+                player.tryMove("up-right")
+                advanceTurn()
+                break
+        }
+    })
 })
