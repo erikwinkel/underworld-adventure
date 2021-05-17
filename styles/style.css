@@ -8,7 +8,7 @@ body {
 .game-container {
     display: grid;
     grid-template-areas: "player-status-container render-container"
-                        "event-log render-container"
+                        "event-log-container render-container"
                         "button-container button-container"
 }
 
@@ -17,9 +17,10 @@ body {
     border: 1px solid white;
 }
 
-.event-log {
-    grid-area: event-log;
+.event-log-container {
+    grid-area: event-log-container;
     border:1px solid white;
+    width: 400px;
 }
 
 .render-container {

@@ -25,10 +25,41 @@ window.addEventListener("DOMContentLoaded", () => {
     //spawns                            g
     const renderKey = [" ","#","<",">"," ","@","g"]
     
+    //helper functions
+
+    //converts an angle to one of the eight directions for movement
+    function angleToDirection(angle){
+        if(angle >= -22.5 && angle <= 22.5) {
+            return "right"
+        } else if(angle > 22.5 && angle <= 67.5) {
+            return "down-right"
+        } else if(angle > 67.5 && angle <= 112.5) {
+            return "down"
+        } else if(angle > 112.5 && angle <= 157.5) {
+            return "down-left"
+        } else if(angle > 157.5 || angle < -157.5) {
+            return "left"
+        } else if(angle < -22.5 && angle >= -67.5) {
+            return "up-right"
+        } else if(angle < -67.5 && angle >= -112.5) {
+            return "up"
+        } else if(angle <-112.5 && angle >= -157.5) {
+            return "up-left"
+        } else{
+            return "error in angleToDirection()"
+        }
+    }
+
+
+    //game state arrays
     const gameState = {
+        //immutable level terrain, for collision
         level: [[]],
-        floor: [[]],
+        //items and corpses on the ground
+        ground: [[]],
+        //actors and other objects that can move and have collision
         entities: [[]],
+        //merged level,ground,and entities for rendering
         view: []
     }
     
@@ -42,9 +73,9 @@ window.addEventListener("DOMContentLoaded", () => {
         })
         //set floor to same size arrays
         //TODO add items based on level source
-        gameState.floor = levelSource.map((row) => {
+        gameState.ground = levelSource.map((row) => {
             return row.map((tile) => {
-                return null
+                return 0
             })
         })
         //set entities to same size
@@ -56,15 +87,15 @@ window.addEventListener("DOMContentLoaded", () => {
                     player.y = y
                     return player
                 } else if(tile === 4) {
+                    gameState.level[y][x] = 0
                     return new Goblin(x,y)
+                } else{
+                    return 0
                 }
             })
         })
     }
-
-    //get render container
-    
-    
+     
     //iterates through gameState arrays and returns combined array of values for rendering
     function mergeView() {
         //set view to level
@@ -78,8 +109,8 @@ window.addEventListener("DOMContentLoaded", () => {
             for(let j= 0; j < view[i].length; j++) {
                 if(gameState.entities[i][j]) {
                     view[i][j] = gameState.entities[i][j].renderValue
-                } else if(gameState.floor[i][j]) {
-                    view[i][j] = gameState.floor[i][j]
+                } else if(gameState.ground[i][j]) {
+                    view[i][j] = gameState.ground[i][j]
                 }
             }
         }
@@ -100,6 +131,13 @@ window.addEventListener("DOMContentLoaded", () => {
     //handles enemy actions and other between turn events, calls mergeView and render
     function advanceTurn() {
         //enemy stuff happens here
+        gameState.entities.forEach((row) => {
+            row.forEach((entity) => {
+                if(entity instanceof Actor && !(entity instanceof Player)){
+                    entity.act()
+                }
+            })
+        })
         mergeView()
         render()
     }
@@ -109,7 +147,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //create game logic and entities
         //game state stored in object containing three arrays of the same size
             //level, immutable, used for collision checking and stairs
-            //floor - not important yet, items and objects on the floor, no collision
+            //ground - not important yet, items and objects on the floor, no collision
             //entities - player and all enemies, pointers to objects.
 
     
@@ -121,6 +159,7 @@ window.addEventListener("DOMContentLoaded", () => {
             this.hitPoints = hitPoints
             this.maxHitPoints = hitPoints
             this.renderValue = 0
+            this.damageRoll = 0
         }
 
         //check if actor would collide with object in target x,y
@@ -199,8 +238,14 @@ window.addEventListener("DOMContentLoaded", () => {
                 this.die()
             }
         }
+
+        attack(target) {
+            let damage = Math.floor(Math.random()*this.damageRoll)+1
+            target.takeDamage(damage)
+        }
+
         die() {
-            gameState.entities[this.y][this.x] = null
+            gameState.entities[this.y][this.x] = 0
         }
     }
 
@@ -209,21 +254,27 @@ window.addEventListener("DOMContentLoaded", () => {
             super(x,y,hitPoints)
             this.name = "Player name 😶"
             this.renderValue = 5
+            this.damageRoll = 6
         }
 
         bump(target) {
             if(target){
                 this.attack(target)
             } else{
-                console.log("Ouch, you bump into something!")
+                addEvent("Ouch, you bump into something!")
             }
         }
 
         attack(target) {
             if(target instanceof Goblin) {
-                console.log("You attack the goblin for 1 damage.")
-                target.takeDamage(1)
+                let damage = Math.floor(Math.random()*this.damageRoll)+1
+                addEvent(`You attack the goblin for ${damage}hp`)
+                target.takeDamage(damage)
             }
+        }
+
+        die() {
+            console.log("You Died")
         }
     }
 
@@ -231,11 +282,53 @@ window.addEventListener("DOMContentLoaded", () => {
         constructor(x,y) {
             super(x,y,Math.floor(Math.random()*5)+1)
             this.renderValue = 6
+            this.damageRoll = 4
         }
         die(){
-            gameState.entities[this.y][this.x] = null
-            console.log("the goblin dies")
+            gameState.entities[this.y][this.x] = 0
+            addEvent("The goblin dies")
         }
+        act() {
+            let distance = Math.hypot(player.x - this.x, player.y - this.y)
+            if(distance < 8) {
+                let angle = Math.atan2(player.y - this.y, player.x - this.x) * 180 / Math.PI
+                let direction = angleToDirection(angle)
+                this.tryMove(direction)
+            }
+        }
+
+        bump(target) {
+            if(target instanceof Player){
+                this.attack(target)
+            }
+        }
+
+        attack(target) {
+            let damage = Math.floor(Math.random()*this.damageRoll)+1
+            addEvent(`The goblin attacks for ${damage}hp`)
+            target.takeDamage(damage)
+    }
+    }
+
+    const eventLog = [" "," "," "," "," "," "," "," "," "," "]
+    let eventContainer = document.querySelector(".event-log-container")
+    
+    function displayEvents() {
+        while(eventContainer.firstChild){
+            eventContainer.removeChild(eventContainer.firstChild)
+        }
+        for(let i = 10; i > 0; i--){
+            if(eventLog[eventLog.length-i]) {
+                let message = document.createElement("div")
+                message.innerText = ">" + eventLog[eventLog.length-i]
+                eventContainer.append(message)
+            }
+        }
+    }
+
+    function addEvent(eventMessage){
+        eventLog.push(eventMessage)
+        displayEvents()
     }
 
     let renderContainer = document.querySelector(".render-container")
@@ -243,15 +336,17 @@ window.addEventListener("DOMContentLoaded", () => {
     for(let i = 0; i < 1600; i++){
         let tile = document.createElement("div")
         tile.classList.add("game-tile")
-        tile.innerText = "."
+        tile.innerText = " "
         renderContainer.append(tile)
     }
     let gameTiles = renderContainer.children
 
+    //create player, load and render game start
     const player = new Player(0,0,10)
     loadLevel(testLevel)
     mergeView()
     render()
+    displayEvents()
 
     //add event listeners for clickable movement buttons
     let movementButtons = document.getElementsByClassName("movement-button")
