@@ -1,15 +1,37 @@
 body {
-    background-color: black;
+    background-color: gray;
     color: white;
     display: flex;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    justify-content: center;
 }
 
 .game-container {
-    display: grid;
-    grid-template-areas: "player-status-container render-container"
-                        "event-log-container render-container"
-                        "button-container button-container"
+    height: 600px;
+    width: 800px;
+    display: none;
+    background-color: black;
+    grid-template-areas: "render-container render-container"
+                        "event-log-container player-status-container"
+                        "event-log-container button-container"
+}
+
+.game-over {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    align-self:center;
+    background-color: black;
+    border: 3px solid white;
+    width: 400px;
+    height: 200px;
+}
+
+.game-over-message {
+    font-size: 32px;
 }
 
 .player-status-container {
@@ -20,7 +42,6 @@ body {
 .event-log-container {
     grid-area: event-log-container;
     border:1px solid white;
-    width: 400px;
 }
 
 .render-container {
@@ -30,7 +51,9 @@ body {
     border: 1px solid white;
 }
 
-
+.movement-button {
+    margin: 2px;
+}
 .button-container {
     grid-area: button-container;
     display:flex;
@@ -44,6 +67,60 @@ body {
 }
 
 .game-tile {
-    font-size: 22px;
+    font-size: 24px;
     line-height: 16px;
+}
+
+.welcome-screen {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 800px;
+    background-color: black;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+}
+
+.welcome-message {
+    text-align: center;
+    margin: 10px;
+    font-size: 32px;
+}
+
+.start-input-container {
+    text-align: center;
+    border: 3px solid white;
+    width: 300px;
+    padding: 5px;
+    visibility: hidden;
+}
+
+.name-input {
+    margin: 3px;
+    line-height: 32px;
+}
+
+
+.input-cursor {
+    color: white;
+    margin-left: -10px;
+}
+
+button {
+    background: transparent;
+    border: 3px solid white;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 24px;
+}
+
+button:hover {
+    background: white;
+    color: black;
 }

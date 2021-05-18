@@ -4,14 +4,14 @@
         <title>Underworld Adventure</title>
         <link rel="stylesheet" href="styles/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <script src="scripts/script.js"></script>
     </head>
     <body>
         <div class="game-container">
             <div class="player-status-container">
-                <div class="player-name">Player Name goes here</div>
-                <div class="health-bar">Health: 💗💗💗💗💗💗</div>
+                <div class="player-name"></div>
+                <div class="health-bar"></div>
             </div>
             <div class="event-log-container"></div>
             <div class="render-container"></div>
@@ -28,6 +28,24 @@
                     <button type="button" class="movement-button" id="down-right" value="down-right">↘</button>
                 </div>
             </div>
+        </div>
+        <div class="welcome-screen">
+            <div class="welcome-container">
+                <div class="welcome-message">.</div>
+                <div class="start-input-container">
+                    <div class="enter-name">Enter your name:</div>
+                    <div class="name-input">
+                        <span class="name-input-field"></span>
+                        <span class="input-cursor">█</span>
+                    </div>
+                    <button type="button" class="start-game">Start Game</button>
+                </div>
+            </div>
+        </div>
+        <div class="game-over">
+            <div class="game-over-message">Game Over</div>
+            <div class="result"></div>
+            <button type="submit" class="restart">Restart Game</button>
         </div>
     </body>
 </html>
