@@ -1,22 +1,19 @@
 body {
     background-color: gray;
     color: white;
-    display: flex;
     font-family: 'VT323', monospace;
     font-size: 24px;
+    display: flex;
     justify-content: center;
 }
 
 .game-container {
-    height: 600px;
-    width: 800px;
     display: none;
     background-color: black;
-    grid-template-areas: "render-container render-container"
-                        "event-log-container player-status-container"
-                        "event-log-container button-container"
+    grid-template-areas: "render-container render-container render-container"
+                        "event-log-container event-log-container player-status-container"
+                        "event-log-container event-log-container button-container"
 }
-
 .game-over {
     display: none;
     flex-direction: column;
@@ -67,17 +64,26 @@ body {
 }
 
 .game-tile {
-    font-size: 24px;
-    line-height: 16px;
+    font-size: 32px;
+    line-height: 24px;
+}
+
+.game-tile-sprite {
+    object-fit: none;
+    object-position: -16px -16px;
+    height: 16px;
+    width: 16px;
+    background-color: white;
+
 }
 
 .welcome-screen {
     display: none;
     justify-content: center;
     align-items: center;
-    height: 600px;
-    width: 800px;
     background-color: black;
+    width: 1024px;
+    height:768px;
 }
 
 .welcome-container {
@@ -122,5 +128,33 @@ button {
 
 button:hover {
     background: white;
+    color: black;
+}
+.render-mode-container {
+    text-align: left;
+    line-height: 32px;
+    margin:10px;
+}
+.radio-container {
+    position: relative;
+    padding-left: 35px;
+}
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio-check {
+    position:absolute;
+    top:0;
+    left:0;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border: 3px solid white;
+}
+
+.radio-container input:checked ~ .radio-check {
+    background-color: white;
     color: black;
 }

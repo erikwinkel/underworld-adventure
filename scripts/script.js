@@ -48,7 +48,8 @@ window.addEventListener("DOMContentLoaded", () => {
     //key               0   1   2   3   4   5   6   7
     //spawns                            g
     const renderKey = [" ","#","<",">"," ","@","g","¥"]
-    
+    const spriteKey = [1,827,291,292,1,28,123,141]
+    const colorKey = ["","","","","","deepskyblue","darkseagreen","gold"]
     //helper functions
 
     //converts an angle to one of the eight directions for movement
@@ -113,7 +114,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 welcomeScreen.style.display = "none"
                 gameScreen.style.display = "grid"
                 document.removeEventListener("keydown", typeName)
-                game(playerName)
+                if(document.querySelector(".radio-container input").checked) {
+                    game(playerName,"ASCII")
+                } else {
+                    game(playerName,"sprite")
+                }
             } else if(event.key === "Backspace"){
                 playerName = playerName.substring(0, playerName.length-1)
             } else if(event.key.length === 1 && playerName.length < 24){
@@ -127,7 +132,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 welcomeScreen.style.display = "none"
                 gameScreen.style.display = "grid"
                 document.removeEventListener("keydown", typeName)
-                game(playerName)
+                if(document.querySelector(".radio-container input").checked) {
+                    game(playerName,"ASCII")
+                } else {
+                    game(playerName,"sprite")
+                }
             }
         })
     }
@@ -147,7 +156,8 @@ window.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.restart').addEventListener("click", () => {location.reload()})
     }
 
-    function game(playerName) {        
+    function game(playerName,mode) {       
+        console.log(mode) 
         //load map from source into game state
         function loadLevel(levelSource) {
             //copy level source to test level
@@ -201,13 +211,28 @@ window.addEventListener("DOMContentLoaded", () => {
             }
             gameState.view = view
         }
-
         //renders array from combined view to play field by keys
-        function render() {
-            for(let i = 0; i < gameTiles.length; i++) {
-                let y = Math.floor(i / gameState.view[0].length)
-                let x = i % gameState.view[0].length
-                gameTiles.item(i).innerText = renderKey[gameState.view[y][x]]
+        function render(mode) {
+            if(mode === "sprite") {
+                for(let i = 0; i < gameTiles.length; i++) {
+                    let y = Math.floor(i / gameState.view[0].length)
+                    let x = i % gameState.view[0].length
+                    let tileCode = spriteKey[gameState.view[y][x]]
+                    let row = Math.floor(tileCode / 48)
+                    let col = tileCode % 48 - 1
+                    gameTiles.item(i).style.objectPosition = `-${col*16}px -${row*16}px`
+                    if(colorKey[gameState.view[y][x]]){
+                        gameTiles.item(i).style.backgroundColor = colorKey[gameState.view[y][x]]
+                    } else {
+                        gameTiles.item(i).style.backgroundColor = "white"
+                    }
+                }
+            } else {
+                for(let i = 0; i < gameTiles.length; i++) {
+                    let y = Math.floor(i / gameState.view[0].length)
+                    let x = i % gameState.view[0].length
+                    gameTiles.item(i).innerText = renderKey[gameState.view[y][x]]
+                }
             }
         }
         
@@ -225,7 +250,7 @@ window.addEventListener("DOMContentLoaded", () => {
             })
             updateUI()
             mergeView()
-            render()
+            render(renderMode)
         }
         
         function checkWin(){
@@ -399,7 +424,7 @@ window.addEventListener("DOMContentLoaded", () => {
             while(eventContainer.firstChild){
                 eventContainer.removeChild(eventContainer.firstChild)
             }
-            for(let i = 10; i > 0; i--){
+            for(let i = 9; i > 0; i--){
                 if(eventLog[eventLog.length-i]) {
                     let message = document.createElement("div")
                     message.innerText = ">" + eventLog[eventLog.length-i]
@@ -427,7 +452,7 @@ window.addEventListener("DOMContentLoaded", () => {
             gameOver(outcome)
         }        
         //game state arrays
-        const gameState = {
+        let gameState = {
             //immutable level terrain, for collision
             level: [[]],
             //items and corpses on the ground
@@ -437,6 +462,7 @@ window.addEventListener("DOMContentLoaded", () => {
             //merged level,ground,and entities for rendering
             view: []
         }
+        const renderMode = mode
         // event log is an array of strings. invoke addEvent(string) to add string.
         const eventLog = [" "," "," "," "," "," "," "," "," "," "]
         let eventContainer = document.querySelector(".event-log-container")
@@ -446,19 +472,30 @@ window.addEventListener("DOMContentLoaded", () => {
             renderContainer.removeChild(renderContainer.firstChild)
         }
         //create and get game-tile divs
-        for(let i = 0; i < 1600; i++){
-            let tile = document.createElement("div")
-            tile.classList.add("game-tile")
-            tile.innerText = " "
-            renderContainer.append(tile)
+        if(renderMode === "sprite") {
+            renderContainer.style.maxHeight = "320px"
+            for(let i = 0; i < 1600; i++){
+                let tile = document.createElement("img")
+                tile.classList.add("game-tile-sprite")
+                tile.src = "img/sprite-sheet.png"
+                renderContainer.append(tile)
+            }
+        } else {
+            for(let i = 0; i < 1600; i++){
+                let tile = document.createElement("div")
+                tile.classList.add("game-tile")
+                tile.innerText = " "
+                renderContainer.append(tile)
+            }
         }
         let gameTiles = renderContainer.children
 
         //create player, load and render game start
         const player = new Player(0,0,10,playerName)
+        const dungeonFloors = []
         loadLevel(testLevel1)
         mergeView()
-        render()
+        render(renderMode)
         displayEvents()
         console.log(player.name)
         updateUI()

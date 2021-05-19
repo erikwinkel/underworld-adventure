@@ -8,44 +8,56 @@
         <script src="scripts/script.js"></script>
     </head>
     <body>
-        <div class="game-container">
-            <div class="player-status-container">
-                <div class="player-name"></div>
-                <div class="health-bar"></div>
-            </div>
-            <div class="event-log-container"></div>
-            <div class="render-container"></div>
-            <div class="button-container">
-                <div class="movement-button-container">
-                    <button type="button" class="movement-button" id="up-left" value="up-left">↖</button>
-                    <button type="button" class="movement-button" id="up" value="up">⬆</button>
-                    <button type="button" class="movement-button" id="up-right" value="up-right">↗</button>
-                    <button type="button" class="movement-button" id="left" value="left">⬅</button>
-                    <button type="button" class="movement-button" id="wait" value="wait">🛑</button>
-                    <button type="button" class="movement-button" id="right" value="right">➡</button>
-                    <button type="button" class="movement-button" id="down-left" value="down-left">↙</button>
-                    <button type="button" class="movement-button" id="down" value="down">⬇</button>
-                    <button type="button" class="movement-button" id="down-right" value="down-right">↘</button>
+            <div class="game-container">
+                <div class="player-status-container">
+                    <div class="player-name"></div>
+                    <div class="health-bar"></div>
                 </div>
-            </div>
-        </div>
-        <div class="welcome-screen">
-            <div class="welcome-container">
-                <div class="welcome-message">.</div>
-                <div class="start-input-container">
-                    <div class="enter-name">Enter your name:</div>
-                    <div class="name-input">
-                        <span class="name-input-field"></span>
-                        <span class="input-cursor">█</span>
+                <div class="event-log-container"></div>
+                <div class="render-container"></div>
+                <div class="button-container">
+                    <div class="movement-button-container">
+                        <button type="button" class="movement-button" id="up-left" value="up-left">↖</button>
+                        <button type="button" class="movement-button" id="up" value="up">⬆</button>
+                        <button type="button" class="movement-button" id="up-right" value="up-right">↗</button>
+                        <button type="button" class="movement-button" id="left" value="left">⬅</button>
+                        <button type="button" class="movement-button" id="wait" value="wait">🛑</button>
+                        <button type="button" class="movement-button" id="right" value="right">➡</button>
+                        <button type="button" class="movement-button" id="down-left" value="down-left">↙</button>
+                        <button type="button" class="movement-button" id="down" value="down">⬇</button>
+                        <button type="button" class="movement-button" id="down-right" value="down-right">↘</button>
                     </div>
-                    <button type="button" class="start-game">Start Game</button>
                 </div>
             </div>
-        </div>
-        <div class="game-over">
-            <div class="game-over-message">Game Over</div>
-            <div class="result"></div>
-            <button type="submit" class="restart">Restart Game</button>
-        </div>
+            <div class="welcome-screen">
+                <div class="welcome-container">
+                    <div class="welcome-message">.</div>
+                    <div class="start-input-container">
+                        <div class="enter-name">Enter your name:</div>
+                        <div class="name-input">
+                            <span class="name-input-field"></span>
+                            <span class="input-cursor">█</span>
+                        </div>
+                        <div class ="render-mode-container">
+                            <label class="radio-container">
+                            <input type="radio" name="mode-radio">
+                                <span class="radio-check"></span>
+                                ASCII Graphics
+                            </label><br>
+                            <label class="radio-container">
+                                <input type="radio"checked name="mode-radio">
+                                <span class="radio-check"></span>
+                                Sprite Graphics
+                            </label>
+                        </div>
+                        <button type="button" class="start-game">Start Game</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-over">
+                <div class="game-over-message">Game Over</div>
+                <div class="result"></div>
+                <button type="button" class="restart">Restart Game</button>
+            </div>
     </body>
 </html>
