@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
     // 2d level array - X AND Y ARE REVERSED - testLevel[y][x] - y++ goes down - x++ goes right
-    const testLevel1 = [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    const testLevel1 = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,1,0,0,0],
@@ -12,18 +12,41 @@ window.addEventListener("DOMContentLoaded", () => {
                         [0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,1,1,1,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,5,0,0,0,0,1,0,0,0,0,1,1,1,1,1,0,1,1,1,1,0,0,0,0],
-                        [0,0,1,1,1,1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],
-                        [0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,6,0,1,0,0,0,0],
+                        [0,0,1,1,1,1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,7,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],
+                        [0,0,1,0,7,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,7,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,4,0,1,0,0,0,0],
                         [0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],
                         [0,0,1,0,0,0,5,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
                         [0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
-    //key               0   1   2   3   4   5   6   7
-    //spawns                            
-    const levelKey =  [" ","#",".","<",">","g","¥"]
+
+    const testLevel2 = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,1,0,0,0],
+                        [0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
+                        [0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
+                        [0,0,0,0,0,0,1,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0],
+                        [0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,5,0,1,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,1,1,1,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,5,0,0,0,0,1,0,0,0,0,1,1,1,1,1,0,1,1,1,1,0,0,0,0],
+                        [0,0,1,1,1,1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],
+                        [0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,3,0,1,0,0,0,0],
+                        [0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],
+                        [0,0,1,0,0,0,5,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
+                        [0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+    
+    const levelSources = [testLevel1,testLevel2]
+    
+    //key               0   1   2   3   4   5   6   7                            
+    const levelKey =  [" ","#",".","<",">","g","¥","%"]
     //key for spritesheet
     const spriteKey = [1,827,291,292,1,28,123,141]
     const colorKey = ["","","","","","deepskyblue","darkseagreen","gold"]
@@ -168,6 +191,8 @@ window.addEventListener("DOMContentLoaded", () => {
                         case 6:
                             gameState.ground[y][x] = new Crown(x,y)
                             break
+                        case 7:
+                            gameState.ground[y][x] = new Potion(x,y)
                     }
                 }
             }
@@ -216,7 +241,7 @@ window.addEventListener("DOMContentLoaded", () => {
         //after handling player input and actions, call advanceTurn
         //handles enemy actions and other between turn events, calls mergeView and render
         function advanceTurn() {
-            checkWin()
+            player.pickup()
             //enemy stuff happens here
             gameState.entities.forEach((row) => {
                 row.forEach((entity) => {
@@ -232,8 +257,16 @@ window.addEventListener("DOMContentLoaded", () => {
         
         //check if the player has won
         function checkWin(){
-            if(gameState.level[player.y][player.x] === 7){
-                endGame("won")
+            let won = false
+            for(let i = 0; i < player.inventory.length; i++){
+                if(player.inventory[i] instanceof Crown){
+                    won = true
+                }
+            }
+            if(won){
+                endGame('won')
+            } else {
+                addEvent("You can't leave without the treasure")
             }
         }
 
@@ -286,6 +319,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 super(x,y)
                 this.tile = 141
                 this.color = "gold"
+            }
+        }
+
+        class Potion extends Item{
+            constructor(x,y){
+                super(x,y)
+                this.tile = 946
+                this.color = "tomato"
+                this.healing = 5
             }
         }
         //Actor class extended to player and enemies
@@ -393,6 +435,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 this.color = "deepskyblue"
                 this.renderValue = 5
                 this.damageRoll = 6
+                this.inventory = []
+            }
+
+            pickup() {
+                if(gameState.ground[player.y][player.x] instanceof Item){
+                    this.inventory.push(gameState.ground[player.y][player.x])
+                    gameState.ground[player.y][player.x] = 0
+                }
+                console.log(this.inventory)
             }
 
             bump(target) {
@@ -411,9 +462,50 @@ window.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
+            heal(hp) {
+                if(this.hitPoints + hp > this.maxHitPoints) {
+                    addEvent(`You heal ${this.maxHitPoints - this.hitPoints}hp`)
+                    this.hitPoints = this.maxHitPoints
+                } else {
+                    this.hitPoints += hp
+                    addEvent(`You heal ${hp}`)
+                }
+            }
+
             die() {
                 addEvent("You Died")
                 endGame("died")
+            }
+
+            drinkPotion() {
+                let i = 0
+                let drank = false
+                while(i < this.inventory.length){
+                    if(this.inventory[i] instanceof Potion) {
+                        addEvent("You drink a potion")
+                        this.heal(this.inventory[i].healing)
+                        this.inventory.splice(i,1)
+                        drank = true
+                        break
+                    }
+                    i++
+                }
+                if(!drank){
+                    addEvent("You have no potions to drink")
+                }
+            }
+
+            takeStairs(direction){
+                let currentTile = gameState.level[player.y][player.x]
+                if(currentTile.direction === direction){
+                    if(direction === "up"){
+                        changeFloors(currentFloor-1)
+                        console.log("stairs up, current floor: " + currentFloor)
+                    } else if(direction === "down"){
+                        changeFloors(currentFloor+1)
+                        console.log("stairs down, current floor: " + currentFloor)
+                    }
+                }
             }
         }
 
@@ -491,22 +583,43 @@ window.addEventListener("DOMContentLoaded", () => {
             for(let i = 0; i < movementButtons.length; i++) {
                 movementButtons[i].removeEventListener('click', clickMove)
             }
-            document.removeEventListener('keydown', keyMove)
+            document.removeEventListener('keydown', keyPress)
+            document.querySelector(".ascend-stairs").removeEventListener('click', stairsUp)
+            document.querySelector(".descend-stairs").removeEventListener('click', stairsDown)
+            document.querySelector(".drink-potion").removeEventListener('click', potionDrink)
             gameOver(outcome)
         } 
 
-        //game state arrays
-        let gameState = {
-            //immutable level terrain, for collision
-            level: [],
-            //items and corpses on the ground
-            ground: [],
-            //actors and other objects that can move and have collision
-            entities: [],
-            //merged level,ground,and entities for rendering
-            view: []
+        function changeFloors(newFloor){
+            if(newFloor < 0){
+                checkWin()
+            } else if(dungeonFloors[newFloor]){
+                gameState = dungeonFloors[newFloor]
+                mergeView()
+                render()
+                currentFloor = newFloor
+            } else {
+                newState = new GameState
+                dungeonFloors[newFloor] = newState
+                gameState = dungeonFloors[newFloor]
+                loadLevel(levelSources[newFloor])
+                mergeView()
+                render()
+                currentFloor = newFloor
+            }
         }
 
+        class GameState {
+            constructor() {
+                this.level = []
+                this.ground = []
+                this.entities = []
+                this.ground = []
+                this.view = []
+            }
+        }
+        //game state arrays
+        let gameState = new GameState
         // event log is an array of strings. invoke addEvent(string) to add string.
         const eventLog = ["","","","","","","","","",""]
         let eventContainer = document.querySelector(".event-log-container")
@@ -527,8 +640,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
         //create player, load and render game start
         const player = new Player(0,0,10,playerName)
-        const dungeonFloors = []
-        loadLevel(testLevel1)
+        const dungeonFloors = [gameState]
+        let currentFloor = 0
+        loadLevel(levelSources[0])
         mergeView()
         render()
         displayEvents()
@@ -544,11 +658,20 @@ window.addEventListener("DOMContentLoaded", () => {
         let movementButtons = document.getElementsByClassName("movement-button")
         for(let i = 0; i < movementButtons.length; i++) {
             movementButtons[i].addEventListener('click', clickMove)
-            
         }
         
+        const stairsUp = () => {player.takeStairs("up")}
+        document.querySelector(".ascend-stairs").addEventListener('click', stairsUp)
+        const stairsDown = () => {player.takeStairs("down")}
+        document.querySelector(".descend-stairs").addEventListener('click', stairsDown)
+        const potionDrink = () => {
+            player.drinkPotion()
+            advanceTurn()
+        }
+        document.querySelector(".drink-potion").addEventListener('click', potionDrink)
+
         //add keyboard event listeners       
-        const keyMove = (event) => {
+        const keyPress = (event) => {
             switch(event.code){
                 case "Numpad1":
                     player.tryMove("down-left")
@@ -586,8 +709,20 @@ window.addEventListener("DOMContentLoaded", () => {
                     advanceTurn()
                     break
             }
+            switch(event.key){
+                case "<":
+                    player.takeStairs("up")
+                    break
+                case ">":
+                    player.takeStairs("down")
+                    break
+                case "q":
+                    player.drinkPotion()
+                    advanceTurn()
+                    break
+            }
         }
-        document.addEventListener('keydown', keyMove)
+        document.addEventListener('keydown', keyPress)
     }
 
     //start the whole thing
