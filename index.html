@@ -16,16 +16,37 @@
                 <div class="event-log-container"></div>
                 <div class="render-container"></div>
                 <div class="button-container">
+                    <div class="action-button-container">
+                        <button type="button" class="ascend-stairs">Ascend Stairs (<)</button>
+                        <button type="button" class="descend-stairs">Descend Stairs (>)</button>
+                        <button type="button" class="drink-potion">Drink Potion (q)</button>
+                    </div>
                     <div class="movement-button-container">
-                        <button type="button" class="movement-button" id="up-left" value="up-left">↖</button>
-                        <button type="button" class="movement-button" id="up" value="up">⬆</button>
-                        <button type="button" class="movement-button" id="up-right" value="up-right">↗</button>
-                        <button type="button" class="movement-button" id="left" value="left">⬅</button>
-                        <button type="button" class="movement-button" id="wait" value="wait">🛑</button>
-                        <button type="button" class="movement-button" id="right" value="right">➡</button>
-                        <button type="button" class="movement-button" id="down-left" value="down-left">↙</button>
-                        <button type="button" class="movement-button" id="down" value="down">⬇</button>
-                        <button type="button" class="movement-button" id="down-right" value="down-right">↘</button>
+                        <button type="button" class="movement-button" id="up-left" value="up-left">
+                            <img src="img/ico/upLeft.png" alt="up-left arrow">
+                        </button>
+                        <button type="button" class="movement-button" id="up" value="up">
+                            <img src="img/ico/arrowUp.png" alt="up arrow">
+                        </button>
+                        <button type="button" class="movement-button" id="up-right" value="up-right">
+                            <img src="img/ico/upRight.png" alt="up-right arrow">
+                        </button>
+                        <button type="button" class="movement-button" id="left" value="left">
+                            <img src="img/ico/arrowLeft.png" alt="left arrow">
+                        </button>
+                        <button type="button" class="movement-button" id="wait" value="wait"></button>
+                        <button type="button" class="movement-button" id="right" value="right">
+                            <img src="img/ico/arrowRight.png" alt="right arrow">
+                        </button>
+                        <button type="button" class="movement-button" id="down-left" value="down-left">
+                            <img src="img/ico/downLeft.png" alt="down-left arrow">
+                        </button>
+                        <button type="button" class="movement-button" id="down" value="down">
+                            <img src="img/ico/arrowDown.png" alt="down arrow">
+                        </button>
+                        <button type="button" class="movement-button" id="down-right" value="down-right">
+                            <img src="img/ico/downRight.png" alt="down=right arrow">
+                        </button>
                     </div>
                 </div>
             </div>
@@ -37,18 +58,6 @@
                         <div class="name-input">
                             <span class="name-input-field"></span>
                             <span class="input-cursor">█</span>
-                        </div>
-                        <div class ="render-mode-container">
-                            <label class="radio-container">
-                            <input type="radio" name="mode-radio">
-                                <span class="radio-check"></span>
-                                ASCII Graphics
-                            </label><br>
-                            <label class="radio-container">
-                                <input type="radio"checked name="mode-radio">
-                                <span class="radio-check"></span>
-                                Sprite Graphics
-                            </label>
                         </div>
                         <button type="button" class="start-game">Start Game</button>
                     </div>

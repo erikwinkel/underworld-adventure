@@ -1,5 +1,5 @@
 body {
-    background-color: gray;
+    background-color: black;
     color: white;
     font-family: 'VT323', monospace;
     font-size: 24px;
@@ -10,6 +10,7 @@ body {
 .game-container {
     display: none;
     background-color: black;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "render-container render-container render-container"
                         "event-log-container event-log-container player-status-container"
                         "event-log-container event-log-container button-container"
@@ -34,6 +35,7 @@ body {
 .player-status-container {
     grid-area: player-status-container;
     border: 1px solid white;
+    padding: 3px;
 }
 
 .event-log-container {
@@ -53,9 +55,18 @@ body {
 }
 .button-container {
     grid-area: button-container;
-    display:flex;
+    display: flex;
     justify-content: space-around;
     border: 1px solid white;
+}
+
+.action-button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.action-button-container button {
+    margin: 3px;
 }
 
 .movement-button-container {
@@ -64,11 +75,6 @@ body {
 }
 
 .game-tile {
-    font-size: 32px;
-    line-height: 24px;
-}
-
-.game-tile-sprite {
     object-fit: none;
     object-position: -16px -16px;
     height: 16px;
@@ -82,8 +88,6 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
-    width: 1024px;
-    height:768px;
 }
 
 .welcome-container {
@@ -128,33 +132,5 @@ button {
 
 button:hover {
     background: white;
-    color: black;
-}
-.render-mode-container {
-    text-align: left;
-    line-height: 32px;
-    margin:10px;
-}
-.radio-container {
-    position: relative;
-    padding-left: 35px;
-}
-.radio-container input {
-    position: absolute;
-    opacity: 0;
-}
-
-.radio-check {
-    position:absolute;
-    top:0;
-    left:0;
-    height: 20px;
-    width: 20px;
-    background-color: black;
-    border: 3px solid white;
-}
-
-.radio-container input:checked ~ .radio-check {
-    background-color: white;
     color: black;
 }

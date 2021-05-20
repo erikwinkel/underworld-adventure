@@ -3,54 +3,32 @@ window.addEventListener("DOMContentLoaded", () => {
     const testLevel1 = [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,1,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,1,0,0,0],
                         [0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
                         [0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
-                        [0,0,0,0,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0],
+                        [0,0,0,0,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0],
                         [0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,4,0,1,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,5,0,1,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,1,1,1,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,1,1,1,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,4,0,0,0,0,1,0,0,0,0,1,1,1,1,1,0,1,1,1,1,0,0,0,0],
+                        [0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,5,0,0,0,0,1,0,0,0,0,1,1,1,1,1,0,1,1,1,1,0,0,0,0],
                         [0,0,1,1,1,1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],
-                        [0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,7,0,1,0,0,0,0],
+                        [0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,6,0,1,0,0,0,0],
                         [0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],
-                        [0,0,1,0,0,0,4,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
-                        [0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
-
-
-
-    // 2d level array - X AND Y ARE REVERSED - testLevel[y][x] - y++ goes down - x++ goes right
-    const testLevel2 = [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
-                        [0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
-                        [0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
-                        [0,0,0,0,0,0,1,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0],
-                        [0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,4,0,1,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,1,1,1,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,4,0,0,0,0,1,0,0,0,0,1,1,1,1,1,0,1,1,1,1,0,0,0,0],
-                        [0,0,1,1,1,1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],
-                        [0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,2,0,1,0,0,0,0],
-                        [0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],
-                        [0,0,1,0,0,0,4,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
+                        [0,0,1,0,0,0,5,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
                         [0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
     //key               0   1   2   3   4   5   6   7
-    //spawns                            g
-    const renderKey = [" ","#","<",">"," ","@","g","¥"]
+    //spawns                            
+    const levelKey =  [" ","#",".","<",">","g","¥"]
+    //key for spritesheet
     const spriteKey = [1,827,291,292,1,28,123,141]
     const colorKey = ["","","","","","deepskyblue","darkseagreen","gold"]
-    //helper functions
+        
+//helper functions
 
     //converts an angle to one of the eight directions for movement
     function angleToDirection(angle){
@@ -74,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
             return "error in angleToDirection()"
         }
     }
-
+    //adds source string to target element, one char per ms
     function slowPrint(target, source, ms) {
         let i = 0
         let newMessage = ""
@@ -88,13 +66,15 @@ window.addEventListener("DOMContentLoaded", () => {
         },ms)
     }
 
-    //game intro screen
+    //start the game on the intro screen
     function gameIntro() {
+        //show the welcome screen
         let welcomeScreen = document.querySelector(".welcome-screen")
         let gameScreen = document.querySelector(".game-container")
         welcomeScreen.style.display = "flex"
         const welcomeMessage = document.querySelector(".welcome-message")
         welcomeMessage.style.color = "white"
+        //print the title
         slowPrint(welcomeMessage, "Welcome to Underworld Adventure", 100)
         setTimeout(() => {
             const inputContainer = document.querySelector(".start-input-container").style.visibility = "visible"
@@ -114,11 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 welcomeScreen.style.display = "none"
                 gameScreen.style.display = "grid"
                 document.removeEventListener("keydown", typeName)
-                if(document.querySelector(".radio-container input").checked) {
-                    game(playerName,"ASCII")
-                } else {
-                    game(playerName,"sprite")
-                }
+                game(playerName)
             } else if(event.key === "Backspace"){
                 playerName = playerName.substring(0, playerName.length-1)
             } else if(event.key.length === 1 && playerName.length < 24){
@@ -132,15 +108,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 welcomeScreen.style.display = "none"
                 gameScreen.style.display = "grid"
                 document.removeEventListener("keydown", typeName)
-                if(document.querySelector(".radio-container input").checked) {
-                    game(playerName,"ASCII")
-                } else {
-                    game(playerName,"sprite")
-                }
+                game(playerName)
             }
         })
     }
 
+    //display the game over window
     function gameOver(outcome){
         const gameOverDisplay = document.querySelector(".game-over")
         gameOverDisplay.style.display = "flex"
@@ -156,39 +129,48 @@ window.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.restart').addEventListener("click", () => {location.reload()})
     }
 
-    function game(playerName,mode) {       
-        console.log(mode) 
+    //gameplay happens in this function
+    function game(playerName) {        
         //load map from source into game state
-        function loadLevel(levelSource) {
-            //copy level source to test level
-            gameState.level = levelSource.map((row) => {
-                return row.map((tile) => {
-                    return tile
-                })
-            })
-            //set floor to same size arrays
-            //TODO add items based on level source
-            gameState.ground = levelSource.map((row) => {
-                return row.map((tile) => {
-                    return 0
-                })
-            })
-            //set entities to same size
-            //TODO add player and enemies from spawns
-            gameState.entities = levelSource.map((row,y) => {
-                return row.map((tile,x) => {
-                    if(tile === 2){
-                        player.x = x
-                        player.y = y
-                        return player
-                    } else if(tile === 4) {
-                        gameState.level[y][x] = 0
-                        return new Goblin(x,y)
-                    } else{
-                        return 0
+        function loadLevel(levelSource) {  
+            for(let y = 0; y < levelSource.length; y++){
+                gameState.level.push([])
+                gameState.ground.push([])
+                gameState.entities.push([])
+                for(let x = 0; x < levelSource[y].length; x++){
+                    gameState.level[y].push(0)
+                    gameState.ground[y].push(0)
+                    gameState.entities[y].push(0)
+                }
+            }    
+            for(let y = 0; y < levelSource.length; y++){
+                for(let x = 0; x < levelSource[y].length; x++){
+                    spawn = levelSource[y][x]
+                    switch(spawn) {
+                        case 1:
+                            gameState.level[y][x] = new Wall(x,y)
+                            break
+                        case 2:
+                            gameState.level[y][x] = new Floor(x,y)
+                            break
+                        case 3:
+                            gameState.level[y][x] = new Stairs(x,y,"up")
+                            gameState.entities[y][x] = player
+                            player.x = x
+                            player.y = y
+                            break
+                        case 4:
+                            gameState.level[y][x] = new Stairs(x,y,"down")
+                            break
+                        case 5:
+                            gameState.entities[y][x] = new Goblin(x,y)
+                            break
+                        case 6:
+                            gameState.ground[y][x] = new Crown(x,y)
+                            break
                     }
-                })
-            })
+                }
+            }
         }
         
         //iterates through gameState arrays and returns combined array of values for rendering
@@ -203,7 +185,7 @@ window.addEventListener("DOMContentLoaded", () => {
             for(let i = 0; i < view.length; i++) {
                 for(let j= 0; j < view[i].length; j++) {
                     if(gameState.entities[i][j]) {
-                        view[i][j] = gameState.entities[i][j].renderValue
+                        view[i][j] = gameState.entities[i][j]
                     } else if(gameState.ground[i][j]) {
                         view[i][j] = gameState.ground[i][j]
                     }
@@ -212,26 +194,21 @@ window.addEventListener("DOMContentLoaded", () => {
             gameState.view = view
         }
         //renders array from combined view to play field by keys
-        function render(mode) {
-            if(mode === "sprite") {
-                for(let i = 0; i < gameTiles.length; i++) {
-                    let y = Math.floor(i / gameState.view[0].length)
-                    let x = i % gameState.view[0].length
-                    let tileCode = spriteKey[gameState.view[y][x]]
+        function render() {
+            for(let i = 0; i < gameTiles.length; i++) {
+                let y = Math.floor(i / gameState.view[0].length)
+                let x = i % gameState.view[0].length
+                if(gameState.view[y][x]){
+                    let tileCode = gameState.view[y][x].tile
+                    let color = gameState.view[y][x].color
                     let row = Math.floor(tileCode / 48)
                     let col = tileCode % 48 - 1
                     gameTiles.item(i).style.objectPosition = `-${col*16}px -${row*16}px`
-                    if(colorKey[gameState.view[y][x]]){
-                        gameTiles.item(i).style.backgroundColor = colorKey[gameState.view[y][x]]
-                    } else {
-                        gameTiles.item(i).style.backgroundColor = "white"
-                    }
+                    gameTiles.item(i).style.backgroundColor = color
                 }
-            } else {
-                for(let i = 0; i < gameTiles.length; i++) {
-                    let y = Math.floor(i / gameState.view[0].length)
-                    let x = i % gameState.view[0].length
-                    gameTiles.item(i).innerText = renderKey[gameState.view[y][x]]
+                else{
+                    gameTiles.item(i).style.objectPosition = `0 0`
+                    gameTiles.item(i).style.backgroundColor = "white"
                 }
             }
         }
@@ -250,31 +227,81 @@ window.addEventListener("DOMContentLoaded", () => {
             })
             updateUI()
             mergeView()
-            render(renderMode)
+            render()
         }
         
+        //check if the player has won
         function checkWin(){
             if(gameState.level[player.y][player.x] === 7){
                 endGame("won")
             }
         }
 
-        //Actor class extended to player and enemies
-        class Actor {
-            constructor(x,y,hitPoints) {
+        class Entity {
+            constructor(x,y,collision) {
                 this.x = x
                 this.y = y
+                this.tile = 1
+                this.color = "white"
+                this.ascii = " "
+                this.collision = collision
+            }
+        }
+        
+        class Wall extends Entity {
+            constructor(x,y) {
+                super(x,y,true)
+                this.tile = 827
+            }
+        }
+        
+        class Floor extends Entity{
+            constructor(x,y) {
+                super(x,y,false)
+                this.tile = 1
+            }
+        }
+
+        class Stairs extends Entity{
+            constructor(x,y,direction){
+                super(x,y,false)
+                this.direction = direction
+                if(direction === "up"){
+                    this.tile = 291
+                } else {
+                    this.tile = 292
+                }
+            }
+        }
+
+        class Item extends Entity{
+            constructor(x,y){
+                super(x,y,false)
+                this.tile = 1
+            }
+        }
+
+        class Crown extends Item{
+            constructor(x,y) {
+                super(x,y)
+                this.tile = 141
+                this.color = "gold"
+            }
+        }
+        //Actor class extended to player and enemies
+        class Actor extends Entity {
+            constructor(x,y,hitPoints) {
+                super(x,y,true)
                 this.hitPoints = hitPoints
                 this.maxHitPoints = hitPoints
-                this.renderValue = 0
                 this.damageRoll = 0
             }
 
             //check if actor would collide with object in target x,y
             checkCollision(x,y) {
-                if(gameState.level[y][x] && gameState.level[y][x] !== 2 && gameState.level[y][x] !== 3 && gameState.level[y][x] !== 7) {
+                if(gameState.level[y][x] && gameState.level[y][x].collision) {
                     return true
-                } else if(gameState.entities[y][x]) {
+                } else if(gameState.entities[y][x] && gameState.entities[y][x].collision) {
                     return true
                 }
                 else return false
@@ -357,10 +384,13 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
 
+        //class for player object - create in game() set pos in loadLevel()
         class Player extends Actor {
             constructor(x,y,hitPoints,name) {
                 super(x,y,hitPoints)
                 this.name = name
+                this.tile = 28
+                this.color = "deepskyblue"
                 this.renderValue = 5
                 this.damageRoll = 6
             }
@@ -387,9 +417,12 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
 
+        //goblin - basic enemy - spawn on 4 by loadLevel()
         class Goblin extends Actor {
             constructor(x,y) {
                 super(x,y,Math.floor(Math.random()*5)+1)
+                this.tile = 123
+                this.color = "darkseagreen"
                 this.renderValue = 6
                 this.damageRoll = 4
             }
@@ -424,47 +457,58 @@ window.addEventListener("DOMContentLoaded", () => {
             while(eventContainer.firstChild){
                 eventContainer.removeChild(eventContainer.firstChild)
             }
-            for(let i = 9; i > 0; i--){
+            for(let i = 10; i > 0; i--){
+                let message = document.createElement("div")
                 if(eventLog[eventLog.length-i]) {
-                    let message = document.createElement("div")
                     message.innerText = ">" + eventLog[eventLog.length-i]
-                    eventContainer.append(message)
+                    message.style.color = "white"
+                } else {
+                    message.innerText = ">"
+                    message.style.color = "black"
                 }
+                eventContainer.append(message)
             }
-            eventContainer.lastChild.style.fontWeight = "bold"
+            if(eventLog[eventLog.length-1]){
+                eventContainer.lastChild.style.color = "black"
+                eventContainer.lastChild.style.backgroundColor = "white"
+            }
         }
         
+        //add a new event and update
         function addEvent(eventMessage){
             eventLog.push(eventMessage)
             displayEvents()
         }
-
+       
+        //update playername and health
         function updateUI() {
             document.querySelector(".player-name").innerText = player.name
             document.querySelector(".health-bar").innerText = "Health: " + player.hitPoints
         }
 
+        //cleans up event listeners and ends the game.
         function endGame(outcome) {
             for(let i = 0; i < movementButtons.length; i++) {
                 movementButtons[i].removeEventListener('click', clickMove)
             }
             document.removeEventListener('keydown', keyMove)
             gameOver(outcome)
-        }        
+        } 
+
         //game state arrays
         let gameState = {
             //immutable level terrain, for collision
-            level: [[]],
+            level: [],
             //items and corpses on the ground
-            ground: [[]],
+            ground: [],
             //actors and other objects that can move and have collision
-            entities: [[]],
+            entities: [],
             //merged level,ground,and entities for rendering
             view: []
         }
-        const renderMode = mode
+
         // event log is an array of strings. invoke addEvent(string) to add string.
-        const eventLog = [" "," "," "," "," "," "," "," "," "," "]
+        const eventLog = ["","","","","","","","","",""]
         let eventContainer = document.querySelector(".event-log-container")
 
         let renderContainer = document.querySelector(".render-container")
@@ -472,21 +516,12 @@ window.addEventListener("DOMContentLoaded", () => {
             renderContainer.removeChild(renderContainer.firstChild)
         }
         //create and get game-tile divs
-        if(renderMode === "sprite") {
-            renderContainer.style.maxHeight = "320px"
-            for(let i = 0; i < 1600; i++){
-                let tile = document.createElement("img")
-                tile.classList.add("game-tile-sprite")
-                tile.src = "img/sprite-sheet.png"
-                renderContainer.append(tile)
-            }
-        } else {
-            for(let i = 0; i < 1600; i++){
-                let tile = document.createElement("div")
-                tile.classList.add("game-tile")
-                tile.innerText = " "
-                renderContainer.append(tile)
-            }
+        renderContainer.style.maxHeight = "320px"
+        for(let i = 0; i < 1600; i++){
+            let tile = document.createElement("img")
+            tile.classList.add("game-tile")
+            tile.src = "img/sprite-sheet.png"
+            renderContainer.append(tile)
         }
         let gameTiles = renderContainer.children
 
@@ -495,15 +530,14 @@ window.addEventListener("DOMContentLoaded", () => {
         const dungeonFloors = []
         loadLevel(testLevel1)
         mergeView()
-        render(renderMode)
+        render()
         displayEvents()
-        console.log(player.name)
         updateUI()
 
         //add event listeners for clickable movement buttons
         const clickMove = (event) => {
-            if(event.target.value !== "wait") {
-                player.tryMove(event.target.value)
+            if(event.currentTarget.value !== "wait") {
+                player.tryMove(event.currentTarget.value)
             }
             advanceTurn()
         }
@@ -513,8 +547,7 @@ window.addEventListener("DOMContentLoaded", () => {
             
         }
         
-        //add keyboard event listeners
-        
+        //add keyboard event listeners       
         const keyMove = (event) => {
             switch(event.code){
                 case "Numpad1":
@@ -557,5 +590,8 @@ window.addEventListener("DOMContentLoaded", () => {
         document.addEventListener('keydown', keyMove)
     }
 
-    gameIntro()
+    //start the whole thing
+    //gameIntro()
+    document.querySelector(".game-container").style.display = "grid"
+    game("Erik")
 })
