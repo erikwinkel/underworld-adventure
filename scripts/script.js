@@ -141,13 +141,16 @@ window.addEventListener("DOMContentLoaded", () => {
     function gameOver(outcome){
         const gameOverDisplay = document.querySelector(".game-over")
         gameOverDisplay.style.display = "flex"
+        const title = document.querySelector(".game-over-message")
         const result = document.querySelector(".result")
         switch (outcome){
             case "died":
+                title.innerText = "Game Over"
                 result.innerText = "You Died"
                 break
             case "won":
-                result.innerText = "Congratulations! You Won!"
+                title.innerText = "Congratulations!"
+                result.innerText = "You Won!"
                 break
         }
         document.querySelector('.restart').addEventListener("click", () => {location.reload()})
@@ -374,13 +377,7 @@ window.addEventListener("DOMContentLoaded", () => {
         
         //check if the player has won
         function checkWin(){
-            let won = false
-            for(let i = 0; i < player.inventory.length; i++){
-                if(player.inventory[i] instanceof Crown){
-                    won = true
-                }
-            }
-            if(won){
+            if(player.hasTreasure){
                 endGame('won')
             } else {
                 addEvent("You can't leave without the treasure")
@@ -447,7 +444,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 super(x,y)
                 this.tile = 141
                 this.color = "gold"
-                this.description = "the Crown of Dumuzid"
+                this.description = "the Crown"
             }
         }
 
@@ -566,6 +563,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 this.renderValue = 5
                 this.damageRoll = 6
                 this.inventory = []
+                this.potions = 0
+                this.hasTreasure = false 
             }
 
             pickup() {
@@ -573,6 +572,12 @@ window.addEventListener("DOMContentLoaded", () => {
                     if(this.inventory.length < 10){
                         addEvent(`You pick up ${gameState.ground[player.y][player.x].description}`)
                         this.inventory.push(gameState.ground[player.y][player.x])
+                        if(gameState.ground[player.y][player.x] instanceof Potion){
+                            this.potions++
+                        }
+                        if(gameState.ground[player.y][player.x] instanceof Crown){
+                            this.hasTreasure = true
+                        }
                         gameState.ground[player.y][player.x] = 0
                     } else {
                         addEvent("You are carrying too much")
@@ -620,6 +625,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         addEvent("You drink a potion")
                         this.heal(this.inventory[i].healing)
                         this.inventory.splice(i,1)
+                        this.potions--
                         drank = true
                         break
                     }
@@ -679,12 +685,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         }
 
-        //displays 10 most recent events
+        //displays 12 most recent events
         function displayEvents() {
             while(eventContainer.firstChild){
                 eventContainer.removeChild(eventContainer.firstChild)
             }
-            for(let i = 10; i > 0; i--){
+            for(let i = 12; i > 0; i--){
                 let message = document.createElement("div")
                 if(eventLog[eventLog.length-i]) {
                     message.innerText = ">" + eventLog[eventLog.length-i]
@@ -711,6 +717,12 @@ window.addEventListener("DOMContentLoaded", () => {
         function updateUI() {
             document.querySelector(".player-name").innerText = player.name
             document.querySelector(".health-bar").innerText = "Health: " + player.hitPoints
+            document.querySelector(".potion-count").innerText = "Potions: " + player.potions
+            document.querySelector(".turn-count").innerText = "Turn: " + turnCounter
+            document.querySelector(".floor-display").innerText = "Floor: " + currentFloor
+            if(player.hasTreasure){
+                document.querySelector(".treasure-display").style.visibility = "visible"
+            }
         }
 
         //cleans up event listeners and ends the game.

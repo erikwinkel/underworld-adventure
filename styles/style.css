@@ -40,6 +40,9 @@ body {
     border: 3px solid white;
     padding: 3px;
     margin: 3px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 .event-log-container {
@@ -143,4 +146,13 @@ button {
 button:hover {
     background: white;
     color: black;
+}
+
+.treasure-display {
+    visibility: hidden;
+    object-fit: none;
+    object-position: -704px -32px;
+    height: 16px;
+    width: 16px;
+    background-color: gold;
 }
