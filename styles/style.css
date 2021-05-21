@@ -10,10 +10,13 @@ body {
 .game-container {
     display: none;
     background-color: black;
+    min-width: 1300px;
+    border: 3px solid white;
+    padding: 3px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "render-container render-container render-container"
                         "event-log-container event-log-container player-status-container"
-                        "event-log-container event-log-container button-container"
+                        "event-log-container event-log-container button-container";
 }
 .game-over {
     display: none;
@@ -34,30 +37,35 @@ body {
 
 .player-status-container {
     grid-area: player-status-container;
-    border: 1px solid white;
+    border: 3px solid white;
     padding: 3px;
+    margin: 3px;
 }
 
 .event-log-container {
     grid-area: event-log-container;
-    border:1px solid white;
+    border:3px solid white;
+    margin: 3px;
 }
 
 .render-container {
     grid-area: render-container;
     display: grid;
     grid: repeat(20, 1fr) / repeat(80, 1fr);
-    border: 1px solid white;
+    margin: 3px;
+    border: 3px solid white;
+
 }
 
 .movement-button {
-    margin: 2px;
+    margin: 3px;
 }
 .button-container {
     grid-area: button-container;
     display: flex;
     justify-content: space-around;
-    border: 1px solid white;
+    margin: 3px;
+    border: 3px solid white;
 }
 
 .action-button-container {
@@ -85,6 +93,8 @@ body {
 
 .welcome-screen {
     display: none;
+    height: 630px;
+    width: 1300px;
     justify-content: center;
     align-items: center;
     background-color: black;

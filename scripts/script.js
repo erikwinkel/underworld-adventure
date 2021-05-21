@@ -5,10 +5,10 @@ window.addEventListener("DOMContentLoaded", () => {
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,1,0,0,0],
                         [0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
-                        [0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
-                        [0,0,0,0,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0],
-                        [0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,5,0,1,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,2,2,2,2,2,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
+                        [0,0,0,0,0,0,1,2,3,2,2,2,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0],
+                        [0,0,0,0,0,0,1,2,2,2,2,2,1,1,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,1,2,2,2,2,2,1,0,0,0,0,0,1,0,5,0,1,0,0,0,0,0,0,1,1,1,0,1,1,1,1,0,0,0,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,1,1,1,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0],
@@ -89,6 +89,7 @@ window.addEventListener("DOMContentLoaded", () => {
         },ms)
     }
 
+    
     //start the game on the intro screen
     function gameIntro() {
         //show the welcome screen
@@ -160,10 +161,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 gameState.level.push([])
                 gameState.ground.push([])
                 gameState.entities.push([])
+                gameState.explored.push([])
                 for(let x = 0; x < levelSource[y].length; x++){
                     gameState.level[y].push(0)
                     gameState.ground[y].push(0)
                     gameState.entities[y].push(0)
+                    gameState.explored[y].push(0)
                 }
             }    
             for(let y = 0; y < levelSource.length; y++){
@@ -218,18 +221,128 @@ window.addEventListener("DOMContentLoaded", () => {
             }
             gameState.view = view
         }
+
+        function getFOV() {
+            let x = player.x
+            let y = player.y
+            //set up our math for each octant
+            class OctantTransform {
+                constructor(xx,xy,yx,yy){
+                    this.xx = xx
+                    this.xy = xy
+                    this.yx = yx
+                    this.yy = yy
+                }
+            }
+            octantTransforms = [new OctantTransform(1,0,0,1),
+                                new OctantTransform(0,1,1,0),
+                                new OctantTransform(0,-1,1,0),
+                                new OctantTransform(-1,0,0,1),
+                                new OctantTransform(-1,0,0,-1),
+                                new OctantTransform(0,-1,-1,0),
+                                new OctantTransform(0,1,-1,0),
+                                new OctantTransform(1,0,0,-1)]
+            //hardcoded view distance - could change later
+            viewDistance = 6.5
+            //clear fov
+            gameState.fov = gameState.view.map((row) => {
+                return row.map((tile) => {
+                    return 0
+                })
+            })
+            //starting tile is always visible
+            gameState.fov[y][x] = 1
+            
+            //check fov in a narrow range transformed by octant value
+            function castLight(x,y,radius,startCol,leftViewSlope,rightViewSlope,transform) {
+                let radiusSquared = radius * radius
+                let prevWasBlocked = false;
+                let savedRightSlope = -1
+                //iterate over columns
+                for(let currentCol = startCol; currentCol <= radius;currentCol++){
+                    let xc = currentCol
+                    //iterate down a column
+                    for(let yc = currentCol; yc >= 0; yc--){
+                        //switch from relative octant coords to true grid coords
+                        gridX = x + xc * transform.xx + yc * transform.xy
+                        gridY = y + xc * transform.yx + yc * transform.yy
+                        //make sure we're inside the level
+                        if(gridX < 0 || gridX >= gameState.fov[0].length || gridY < 0 || gridY >= gameState.fov.length){
+                            continue
+                        }
+                        //get slopes to corners of current tile
+                        let leftTileSlope = (yc + 0.5) / (xc - 0.5)
+                        let rightTileSlope = (yc - 0.5) / (xc + 0.5)
+                        if(rightTileSlope > leftViewSlope){
+                            continue
+                        } else if(leftTileSlope < rightViewSlope){
+                            break
+                        }
+
+                        distanceSquared = xc * xc + yc * yc
+                        if(distanceSquared <= radiusSquared){
+                            gameState.fov[gridY][gridX] = 1
+                        }
+                        //check if current tile blocks LOS
+                        curBlocked = gameState.level[gridY][gridX].blocksView
+                        if(prevWasBlocked) {
+                            if(curBlocked) {
+                                savedRightSlope = rightTileSlope
+                            } else {
+                                prevWasBlocked = false
+                                leftViewSlope = savedRightSlope
+                            }
+                        } else {
+                            if(curBlocked) {
+                                if(leftTileSlope <= leftViewSlope) {
+                                    castLight(x,y,viewDistance,currentCol + 1,leftViewSlope,leftTileSlope,transform)
+                                }
+                                prevWasBlocked = true
+                                savedRightSlope = rightTileSlope
+                            }
+                        }
+                    }
+
+                    if(prevWasBlocked){
+                        break
+                    }
+                }
+            }
+
+            //check fov for each octant
+            for(let i = 0; i < octantTransforms.length; i++){
+                castLight(x,y,viewDistance,1,1.0,0.0,octantTransforms[i])
+            }
+
+            //updated explored mask to include new fov
+            for(let i = 0; i < gameState.explored.length; i++) {
+                for(let j = 0; j < gameState.explored[0].length; j++){
+                    if(gameState.fov[i][j]){
+                        gameState.explored[i][j] = 1
+                    }
+                }
+            }
+        }
+
+
         //renders array from combined view to play field by keys
         function render() {
             for(let i = 0; i < gameTiles.length; i++) {
                 let y = Math.floor(i / gameState.view[0].length)
                 let x = i % gameState.view[0].length
-                if(gameState.view[y][x]){
+                if(gameState.view[y][x] && gameState.fov[y][x]){
                     let tileCode = gameState.view[y][x].tile
                     let color = gameState.view[y][x].color
                     let row = Math.floor(tileCode / 48)
                     let col = tileCode % 48 - 1
                     gameTiles.item(i).style.objectPosition = `-${col*16}px -${row*16}px`
                     gameTiles.item(i).style.backgroundColor = color
+                } else if(gameState.explored[y][x] && gameState.level[y][x]){
+                    let tileCode = gameState.level[y][x].tile
+                    let row = Math.floor(tileCode / 48)
+                    let col = tileCode % 48 - 1
+                    gameTiles.item(i).style.objectPosition = `-${col*16}px -${row*16}px`
+                    gameTiles.item(i).style.backgroundColor = "dimgray"
                 }
                 else{
                     gameTiles.item(i).style.objectPosition = `0 0`
@@ -241,7 +354,9 @@ window.addEventListener("DOMContentLoaded", () => {
         //after handling player input and actions, call advanceTurn
         //handles enemy actions and other between turn events, calls mergeView and render
         function advanceTurn() {
-            player.pickup()
+            if(gameState.ground[player.y][player.x] instanceof Item){
+                addEvent(`On the ground, you see ${gameState.ground[player.y][player.x].description}`)
+            }
             //enemy stuff happens here
             gameState.entities.forEach((row) => {
                 row.forEach((entity) => {
@@ -250,8 +365,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     }
                 })
             })
+            turnCounter++
             updateUI()
             mergeView()
+            getFOV()
             render()
         }
         
@@ -270,6 +387,12 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
 
+        //
+        function checkLOS(x1,y1,x2,y2){
+
+        }
+
+
         class Entity {
             constructor(x,y,collision) {
                 this.x = x
@@ -278,6 +401,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 this.color = "white"
                 this.ascii = " "
                 this.collision = collision
+                this.blocksView = false
             }
         }
         
@@ -285,6 +409,8 @@ window.addEventListener("DOMContentLoaded", () => {
             constructor(x,y) {
                 super(x,y,true)
                 this.tile = 827
+                this.blocksView = true
+                this.color = "white"
             }
         }
         
@@ -292,6 +418,7 @@ window.addEventListener("DOMContentLoaded", () => {
             constructor(x,y) {
                 super(x,y,false)
                 this.tile = 1
+                this.color = "white"
             }
         }
 
@@ -311,6 +438,7 @@ window.addEventListener("DOMContentLoaded", () => {
             constructor(x,y){
                 super(x,y,false)
                 this.tile = 1
+                this.description = "an item"
             }
         }
 
@@ -319,6 +447,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 super(x,y)
                 this.tile = 141
                 this.color = "gold"
+                this.description = "the Crown of Dumuzid"
             }
         }
 
@@ -328,6 +457,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 this.tile = 946
                 this.color = "tomato"
                 this.healing = 5
+                this.description = "a health potion"
             }
         }
         //Actor class extended to player and enemies
@@ -440,10 +570,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
             pickup() {
                 if(gameState.ground[player.y][player.x] instanceof Item){
-                    this.inventory.push(gameState.ground[player.y][player.x])
-                    gameState.ground[player.y][player.x] = 0
+                    if(this.inventory.length < 10){
+                        addEvent(`You pick up ${gameState.ground[player.y][player.x].description}`)
+                        this.inventory.push(gameState.ground[player.y][player.x])
+                        gameState.ground[player.y][player.x] = 0
+                    } else {
+                        addEvent("You are carrying too much")
+                    }
                 }
-                console.log(this.inventory)
+                
             }
 
             bump(target) {
@@ -468,7 +603,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     this.hitPoints = this.maxHitPoints
                 } else {
                     this.hitPoints += hp
-                    addEvent(`You heal ${hp}`)
+                    addEvent(`You heal ${hp}hp`)
                 }
             }
 
@@ -596,6 +731,7 @@ window.addEventListener("DOMContentLoaded", () => {
             } else if(dungeonFloors[newFloor]){
                 gameState = dungeonFloors[newFloor]
                 mergeView()
+                getFOV()
                 render()
                 currentFloor = newFloor
             } else {
@@ -604,6 +740,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 gameState = dungeonFloors[newFloor]
                 loadLevel(levelSources[newFloor])
                 mergeView()
+                getFOV()
                 render()
                 currentFloor = newFloor
             }
@@ -616,6 +753,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 this.entities = []
                 this.ground = []
                 this.view = []
+                this.fov = []
+                this.explored = []
             }
         }
         //game state arrays
@@ -642,8 +781,10 @@ window.addEventListener("DOMContentLoaded", () => {
         const player = new Player(0,0,10,playerName)
         const dungeonFloors = [gameState]
         let currentFloor = 0
+        let turnCounter = 0 
         loadLevel(levelSources[0])
         mergeView()
+        getFOV()
         render()
         displayEvents()
         updateUI()
@@ -660,16 +801,26 @@ window.addEventListener("DOMContentLoaded", () => {
             movementButtons[i].addEventListener('click', clickMove)
         }
         
-        const stairsUp = () => {player.takeStairs("up")}
+        const stairsUp = () => {
+            player.takeStairs("up")
+            advanceTurn()
+        }
         document.querySelector(".ascend-stairs").addEventListener('click', stairsUp)
-        const stairsDown = () => {player.takeStairs("down")}
+        const stairsDown = () => {
+            player.takeStairs("down")
+            advanceTurn()
+        }
         document.querySelector(".descend-stairs").addEventListener('click', stairsDown)
         const potionDrink = () => {
             player.drinkPotion()
             advanceTurn()
         }
         document.querySelector(".drink-potion").addEventListener('click', potionDrink)
-
+        const pickupItem = () => {
+            player.pickup()
+            advanceTurn()
+        }
+        document.querySelector(".pickup-item").addEventListener('click', pickupItem)
         //add keyboard event listeners       
         const keyPress = (event) => {
             switch(event.code){
@@ -712,12 +863,18 @@ window.addEventListener("DOMContentLoaded", () => {
             switch(event.key){
                 case "<":
                     player.takeStairs("up")
+                    advanceTurn()
                     break
                 case ">":
                     player.takeStairs("down")
+                    advanceTurn()
                     break
                 case "q":
                     player.drinkPotion()
+                    advanceTurn()
+                    break
+                case "g":
+                    player.pickup()
                     advanceTurn()
                     break
             }
@@ -726,7 +883,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     //start the whole thing
-    //gameIntro()
-    document.querySelector(".game-container").style.display = "grid"
-    game("Erik")
+    gameIntro()
+    //document.querySelector(".game-container").style.display = "grid"
+    //game("Erik")
 })
